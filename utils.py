@@ -41,11 +41,11 @@ def nearest_neighbor(target_vector, vectors):
     # Hint: You should use the cosine_similarity function that you already wrote.
     # Hint: For this lab, you can just use a for loop to iterate through vectors.
     '''
-    mostsimilar = -1
+    mostsimilar = None
     index = -1
     for i, v in enumerate(vectors):
         similarity = cosine_similarity(target_vector,v)
-        if similarity > mostsimilar:
+        if mostsimilar is None  or similarity > mostsimilar:
             mostsimilar = similarity
             index = i
     return index
